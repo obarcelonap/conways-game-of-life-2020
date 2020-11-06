@@ -129,5 +129,19 @@ class WorldSpec : StringSpec() { init {
             count shouldBe aliveNeighbours
         }
     }
+
+    "it should regenerate the world considering conways laws" {
+        val world = world(
+                listOf(Alive, Dead, Alive),
+                listOf(Dead, Alive, Dead),
+                listOf(Alive, Dead, Dead))
+
+        val newWorld = world.regenerate()
+
+        newWorld.cells shouldBe listOf(
+                listOf(Dead, Alive, Dead),
+                listOf(Alive, Alive, Dead),
+                listOf(Dead, Dead, Dead))
+    }
 }
 }
