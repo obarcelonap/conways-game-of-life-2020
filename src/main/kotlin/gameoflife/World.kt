@@ -1,9 +1,21 @@
 package gameoflife
 
+
 class World(val cells: List<List<Cell>>) {
     val size: Int = cells.map { it.size }.sum()
 
     companion object Factory {
+        fun random(sizeX: Int, sizeY: Int): World =
+                World(
+                        generateSequence {
+                            Cell.sequence()
+                                    .take(sizeX)
+                                    .toList()
+                        }
+                                .take(sizeY)
+                                .toList()
+                )
+
         fun world(vararg cells: List<Cell>) = World(cells.toList())
     }
 

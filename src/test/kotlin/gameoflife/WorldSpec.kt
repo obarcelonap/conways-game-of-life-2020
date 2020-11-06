@@ -143,5 +143,10 @@ class WorldSpec : StringSpec() { init {
                 listOf(Alive, Alive, Dead),
                 listOf(Dead, Dead, Dead))
     }
+
+    "it should create a random world of the specified size" {
+        val world = World.random(10, 10)
+        world.size shouldBe 100
+    }
 }
 }

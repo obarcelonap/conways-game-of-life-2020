@@ -9,6 +9,12 @@ Extracted Kotlin bootstrap template from
 https://github.com/swkBerlin/kata-bootstraps
 
 # Run
+Running the application outputs a random world by console which is printed every 5 sec.
 ```shell script
-> ./gradlew test
+$ ./gradlew run
+```
+
+Tests
+```shell script
+$ ./gradlew test
 ```
